@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BUS-ROUTER 86 // Diagnóstico de Arquitetura Computacional</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="crt-overlay" aria-hidden="true"></div>
+
+  <main class="terminal-shell">
+    <header class="bios-header">
+      <div class="bios-title-row">
+        <span class="bios-badge">SYS-REV 1.86</span>
+        <h1>BUS-ROUTER 86 // ARQUITETURA COMPUTACIONAL<span class="cursor">_</span></h1>
+      </div>
+
+      <section class="telemetry-bar" aria-label="Indicadores da partida">
+        <div class="metric">
+          <span class="metric-label">PACOTE</span>
+          <span id="packet-counter" class="metric-value">01/16</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">ACERTOS</span>
+          <span id="score-counter" class="metric-value">0</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">STREAK</span>
+          <span id="streak-counter" class="metric-value">0</span>
+        </div>
+        <div class="actions-group">
+          <button id="glossary-btn" type="button" class="btn btn-secondary">GLOSSÁRIO</button>
+          <button id="restart-btn" type="button" class="btn btn-amber">REINICIAR</button>
+        </div>
+      </section>
+    </header>
+
+    <section id="game-view" class="game-layout">
+      <article class="signal-panel" aria-live="polite">
+        <div class="panel-header">
+          <span>[ BARRAMENTO DE ENTRADA :: SINAL ATIVO ]</span>
+          <span id="packet-id" class="tag-amber">SIG-00</span>
+        </div>
+
+        <p id="clue-text" class="clue-text">Carregando sinal do sistema...</p>
+
+        <div id="status-box" class="status-box status-idle">
+          AGUARDANDO ROTEAMENTO PARA UM COMPONENTE DA PLACA...
+        </div>
+
+        <div class="panel-footer">
+          <span class="hint-caption">Dica: clique em um chip ou pressione as teclas 1–9 / A–G</span>
+          <button id="next-btn" type="button" class="btn btn-primary hidden">PRÓXIMO SINAL &gt;&gt;</button>
+        </div>
+      </article>
+
+      <section class="chips-panel" aria-label="Componentes de destino">
+        <div class="panel-header">
+          <span>[ MATRIZ DE COMPONENTES :: SELECIONE O DESTINO ]</span>
+          <span class="tag-green">16 NÓS ATIVOS</span>
+        </div>
+        <div id="chips-grid" class="chips-grid"></div>
+      </section>
+    </section>
+
+    <section id="summary-view" class="summary-panel hidden" aria-live="polite">
+      <div class="panel-header">
+        <span>[ RELATÓRIO FINAL DE DIAGNÓSTICO DO BARRAMENTO ]</span>
+        <span class="tag-amber">CICLO CONCLUÍDO</span>
+      </div>
+
+      <div class="summary-stats">
+        <div class="summary-card">
+          <span class="metric-label">ACERTOS TOTAIS</span>
+          <strong id="final-score" class="summary-number">0 / 16</strong>
+        </div>
+        <div class="summary-card">
+          <span class="metric-label">PRECISÃO</span>
+          <strong id="final-accuracy" class="summary-number">0%</strong>
+        </div>
+        <div class="summary-card">
+          <span class="metric-label">MAIOR SEQUÊNCIA</span>
+          <strong id="final-streak" class="summary-number">0</strong>
+        </div>
+      </div>
+
+      <div id="review-section" class="review-section">
+        <h2>CONCEITOS PARA REVISÃO</h2>
+        <div id="review-list" class="review-list"></div>
+      </div>
+
+      <div class="summary-actions">
+        <button id="play-again-btn" type="button" class="btn btn-primary">NOVO CICLO DE TESTE</button>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="glossary-modal" class="glossary-modal">
+    <div class="modal-content">
+      <div class="panel-header">
+        <span>[ GLOSSÁRIO DE REFERÊNCIA — ARQUITETURA COMPUTACIONAL ]</span>
+        <button id="close-modal-btn" type="button" class="btn btn-secondary">FECHAR [ESC]</button>
+      </div>
+      <div id="glossary-list" class="glossary-list"></div>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>/
